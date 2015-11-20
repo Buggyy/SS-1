@@ -15,9 +15,11 @@ import java.util.Random;
  */
 public class Student /*implements Comparator<Student>*/ {
     
+    private static final int NUL_VALUE = 0;
+    
     // Attributes
-    private int studentNummer = 0;
-    private double cijfer = 0; 
+    private int studentNummer = NUL_VALUE;
+    private double cijfer = NUL_VALUE; 
 
     public Student(int studentNummer) {
         this.studentNummer = studentNummer;
