@@ -7,6 +7,7 @@ package s.s.po1;
 
 import Handlers.StudentHandler;
 import Models.Student;
+import Sort.Sorter;
 import java.util.ArrayList;
 import java.util.Scanner;
 import nl.hva.dmci.ict.inf.ads.lib.StdRandom;
@@ -46,11 +47,10 @@ public class SS1 {
         
         // Sort 
         double beginTime = System.nanoTime();   // Begin time
-        
-        
-        
+        Sorter.quickSort(allStudentsArray);
         double endTime = System.nanoTime();     // End time
         
+        // Print contents of allStudentsArray
         for(Student s : allStudentsArray){
             System.out.println(s.toString());
         }
