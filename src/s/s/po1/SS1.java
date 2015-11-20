@@ -87,6 +87,8 @@ public class SS1 {
                     beginTime = System.nanoTime();
 
                     //  QUICKSORT
+                    Sorter.quickSort(allStudentsArray);
+                    
                     //  End Time
                     endTime = System.nanoTime();
 
@@ -104,6 +106,8 @@ public class SS1 {
                     beginTime = System.nanoTime();
 
                     //  QUICKSORT
+                    Sorter.quickSort(allStudentsArray);
+                    
                     //  End Time
                     endTime = System.nanoTime();
 
@@ -120,12 +124,14 @@ public class SS1 {
                     beginTime = System.nanoTime();
 
                     //  QUICKSORT
+                    Sorter.quickSort(allStudentsArray);
+                    
                     //  End Time
                     endTime = System.nanoTime();
 
                     // Display time spend
                     System.out.println("\nSorting for " + HUNDRED_SIXTY_THOUSAND + " took: "
-                            + (endTime - beginTime) / 1000000000 + " sec");
+                            + (endTime - beginTime) / 1000000000 + " sec\n");
 
                     break;
             }
