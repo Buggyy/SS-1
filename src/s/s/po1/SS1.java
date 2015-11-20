@@ -36,18 +36,21 @@ public class SS1 {
             // Get ArrayList with studentnumbers and grades
             ArrayList<Student> allStudents = studentHandler.getStudents();
 
+            //  Convert allStudents ArrayList to an array to enable sorting
+            Student[] allStudentsArray = allStudents.toArray(new Student[allStudents.size()]);
+
+            // <insert comment here>
             switch (i) {
                 case 0:
                     //  Create students
                     studentHandler.createStudents(TEN_THOUSAND);
 
-                    //  Convert allStudents ArrayList to an array to enable sorting
-                    Student[] allStudentsArray = allStudents.toArray(new Student[allStudents.size()]);
-
                     //  Begin time
                     double beginTime = System.nanoTime();
 
                     //  QUICKSORT
+                    Sorter.quickSort(allStudentsArray);
+
                     //  End Time
                     double endTime = System.nanoTime();
 
@@ -61,13 +64,12 @@ public class SS1 {
                     //  Create students
                     studentHandler.createStudents(TWENTY_THOUSAND);
 
-                    //  Convert allStudents ArrayList to an array to enable sorting
-                    allStudentsArray = allStudents.toArray(new Student[allStudents.size()]);
-
                     //  Begin time
                     beginTime = System.nanoTime();
 
                     //  QUICKSORT
+                    Sorter.quickSort(allStudentsArray);
+                    
                     //  End Time
                     endTime = System.nanoTime();
 
@@ -80,9 +82,6 @@ public class SS1 {
 
                     //  Create students
                     studentHandler.createStudents(FOURTY_THOUSAND);
-
-                    //  Convert allStudents ArrayList to an array to enable sorting
-                    allStudentsArray = allStudents.toArray(new Student[allStudents.size()]);
 
                     //  Begin time
                     beginTime = System.nanoTime();
@@ -101,9 +100,6 @@ public class SS1 {
                     //  Create students
                     studentHandler.createStudents(EIGHTY_THOUSAND);
 
-                    //  Convert allStudents ArrayList to an array to enable sorting
-                    allStudentsArray = allStudents.toArray(new Student[allStudents.size()]);
-
                     //  Begin time
                     beginTime = System.nanoTime();
 
@@ -119,9 +115,6 @@ public class SS1 {
                 case 4:
                     //  Create students
                     studentHandler.createStudents(HUNDRED_SIXTY_THOUSAND);
-
-                    //  Convert allStudents ArrayList to an array to enable sorting
-                    allStudentsArray = allStudents.toArray(new Student[allStudents.size()]);
 
                     //  Begin time
                     beginTime = System.nanoTime();
@@ -149,7 +142,6 @@ public class SS1 {
 //        for (Student s : allStudentsArray) {
 //            System.out.println(s.toString());
 //        }
-
         }
 
     }
