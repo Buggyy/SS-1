@@ -45,7 +45,7 @@ public class Student implements Comparable<Student> {
      *
      * @return
      */
-    public static double generateCijfer() {
+    public double generateCijfer() {
         DecimalFormat df = new DecimalFormat("#.#");
 
         double rangeMin = 1.0;
