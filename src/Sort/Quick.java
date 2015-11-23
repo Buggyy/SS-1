@@ -8,8 +8,9 @@ package Sort;
 import nl.hva.dmci.ict.inf.ads.lib.StdRandom;
 
 /**
+ * Median-of-three partitioning included
  *
- * @author Omer
+ * @author Ömer Zülaloğlu [IS204] 500712124 & Stefan Lobato [IS204] 500707274
  */
 public class Quick {
 
@@ -26,5 +27,6 @@ public class Quick {
         sort(a, lo, j - 1);              // Sort left part a[lo .. j-1].
         sort(a, j + 1, hi);              // Sort right part a[j+1 .. hi].
     }
-    
+
+
 }

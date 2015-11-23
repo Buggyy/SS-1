@@ -49,8 +49,10 @@ public class SS1 {
                     double beginTime = System.nanoTime();
 
                     //  QUICKSORT
-                    Sorter.quickSort(allStudentsArray);
-
+                    //  Sorter.quickSort(allStudentsArray);
+                    Sorter.quickSort3Way(allStudentsArray);
+                    
+                    
                     //  End Time
                     double endTime = System.nanoTime();
 
@@ -68,8 +70,9 @@ public class SS1 {
                     beginTime = System.nanoTime();
 
                     //  QUICKSORT
-                    Sorter.quickSort(allStudentsArray);
-                    
+                    //  Sorter.quickSort(allStudentsArray);
+                    Sorter.quickSort3Way(allStudentsArray);
+
                     //  End Time
                     endTime = System.nanoTime();
 
@@ -87,8 +90,9 @@ public class SS1 {
                     beginTime = System.nanoTime();
 
                     //  QUICKSORT
-                    Sorter.quickSort(allStudentsArray);
-                    
+                    //  Sorter.quickSort(allStudentsArray);
+                    Sorter.quickSort3Way(allStudentsArray);
+
                     //  End Time
                     endTime = System.nanoTime();
 
@@ -106,8 +110,9 @@ public class SS1 {
                     beginTime = System.nanoTime();
 
                     //  QUICKSORT
-                    Sorter.quickSort(allStudentsArray);
-                    
+                    //  Sorter.quickSort(allStudentsArray);
+                    Sorter.quickSort3Way(allStudentsArray);
+
                     //  End Time
                     endTime = System.nanoTime();
 
@@ -124,7 +129,8 @@ public class SS1 {
                     beginTime = System.nanoTime();
 
                     //  QUICKSORT
-                    Sorter.quickSort(allStudentsArray);
+                    //  Sorter.quickSort(allStudentsArray);
+                    Sorter.quickSort3Way(allStudentsArray);
                     
                     //  End Time
                     endTime = System.nanoTime();
@@ -136,6 +142,7 @@ public class SS1 {
                     break;
             }
 
+            
             //  Creating a scanner object
 //        Scanner input = new Scanner(System.in);
 //        // Save user input for amount of students
@@ -148,6 +155,9 @@ public class SS1 {
 //        for (Student s : allStudentsArray) {
 //            System.out.println(s.toString());
 //        }
+            
+            
+            
         }
 
     }

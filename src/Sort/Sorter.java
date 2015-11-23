@@ -5,7 +5,6 @@
  */
 package Sort;
 
-import nl.hva.dmci.ict.inf.ads.lib.In;
 import nl.hva.dmci.ict.inf.ads.lib.StdOut;
 
 /**
@@ -16,8 +15,20 @@ public class Sorter {
 
     private Comparable[] aux;      // auxiliary array for merges
 
+    /**
+     * 
+     * @param a 
+     */
     public static void quickSort(Comparable[] a) {
         Quick.sort(a);
+    }
+    
+    /**
+     * 
+     * @param a 
+     */
+    public static void quickSort3Way(Comparable[] a) {
+        Quick3way.sort(a, 0, a.length - 1);
     }
 
     public static int partition(Comparable[] a, int lo, int hi) {
@@ -125,13 +136,5 @@ public class Sorter {
         }
 
     }
-    
-//    public static void main(String[] args) {  
-//        // Read strings from standard input, sort them, and print.
-//        String[] a = In.readStrings();
-//        quickSort(a);       // This can be changed to mergeSort(a), maybe with user input?
-//        assert isSorted(a);
-//        show(a);
-//    }
-    
+
 }
