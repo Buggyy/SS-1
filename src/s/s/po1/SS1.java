@@ -29,152 +29,131 @@ public class SS1 {
 
         //  Create Handlers
         StudentHandler studentHandler = new StudentHandler();
-
-//        for (int i = 0; i < 5; i++) {
-//
-//            // Get ArrayList with studentnumbers and grades
-//            ArrayList<Student> allStudents = studentHandler.getStudents();
-//
-//            //  Convert allStudents ArrayList to an array to enable sorting
-//            Student[] allStudentsArray = allStudents.toArray(new Student[allStudents.size()]);
-//
-//            
-//            switch (i) {
-//                case 0:
-//                    //  Create students
-//                    studentHandler.createStudents(TEN_THOUSAND);
-//
-//                    //  Begin time
-//                    double beginTime = System.nanoTime();
-//
-//                    //  QUICKSORT
-//                    //  Sorter.quickSort(allStudentsArray);
-//                    Sorter.quickSort3Way(allStudentsArray);
-//                    
-//                    
-//                    //  End Time
-//                    double endTime = System.nanoTime();
-//
-//                    // Display time spend
-//                    System.out.println("\nSorting for " + TEN_THOUSAND + " took: "
-//                            + (endTime - beginTime) / 1000000000 + " sec");
-//
-//                    break;
-//                case 1:
-//
-//                    //  Create students
-//                    studentHandler.createStudents(TWENTY_THOUSAND);
-//
-//                    //  Begin time
-//                    beginTime = System.nanoTime();
-//
-//                    //  QUICKSORT
-//                    //  Sorter.quickSort(allStudentsArray);
-//                    Sorter.quickSort3Way(allStudentsArray);
-//
-//                    //  End Time
-//                    endTime = System.nanoTime();
-//
-//                    // Display time spend
-//                    System.out.println("\nSorting for " + TWENTY_THOUSAND + " took: "
-//                            + (endTime - beginTime) / 1000000000 + " sec");
-//
-//                    break;
-//                case 2:
-//
-//                    //  Create students
-//                    studentHandler.createStudents(FOURTY_THOUSAND);
-//
-//                    //  Begin time
-//                    beginTime = System.nanoTime();
-//
-//                    //  QUICKSORT
-//                    //  Sorter.quickSort(allStudentsArray);
-//                    Sorter.quickSort3Way(allStudentsArray);
-//
-//                    //  End Time
-//                    endTime = System.nanoTime();
-//
-//                    // Display time spend
-//                    System.out.println("\nSorting for " + FOURTY_THOUSAND + " took: "
-//                            + (endTime - beginTime) / 1000000000 + " sec");
-//
-//                    break;
-//                case 3:
-//
-//                    //  Create students
-//                    studentHandler.createStudents(EIGHTY_THOUSAND);
-//
-//                    //  Begin time
-//                    beginTime = System.nanoTime();
-//
-//                    //  QUICKSORT
-//                    //  Sorter.quickSort(allStudentsArray);
-//                    Sorter.quickSort3Way(allStudentsArray);
-//
-//                    //  End Time
-//                    endTime = System.nanoTime();
-//
-//                    // Display time spend
-//                    System.out.println("\nSorting for " + EIGHTY_THOUSAND + " took: "
-//                            + (endTime - beginTime) / 1000000000 + " sec");
-//
-//                    break;
-//                case 4:
-//                    //  Create students
-//                    studentHandler.createStudents(HUNDRED_SIXTY_THOUSAND);
-//
-//                    //  Begin time
-//                    beginTime = System.nanoTime();
-//
-//                    //  QUICKSORT
-//                    //  Sorter.quickSort(allStudentsArray);
-//                    Sorter.quickSort3Way(allStudentsArray);
-//                    
-//                    //  End Time
-//                    endTime = System.nanoTime();
-//
-//                    // Display time spend
-//                    System.out.println("\nSorting for " + HUNDRED_SIXTY_THOUSAND + " took: "
-//                            + (endTime - beginTime) / 1000000000 + " sec\n");
-//
-//                    break;
-//            }
-
-           
-
+        /**
+         * for (int i = 0; i < 5; i++) {
+         *
+         * // Get ArrayList with studentnumbers and grades ArrayList<Student>
+         * allStudents = studentHandler.getStudents();
+         *
+         * // Convert allStudents ArrayList to an array to enable sorting
+         * Student[] allStudentsArray = allStudents.toArray(new
+         * Student[allStudents.size()]);
+         *
+         *
+         * switch (i) { case 0: // Create students
+         * studentHandler.createStudents(TEN_THOUSAND);
+         *
+         * // Begin time double beginTime = System.nanoTime();
+         *
+         * // QUICKSORT // Sorter.quickSort(allStudentsArray);
+         * Sorter.quickSort3Way(allStudentsArray);
+         *
+         *
+         * // End Time double endTime = System.nanoTime();
+         *
+         * // Display time spend System.out.println("\nSorting for " +
+         * TEN_THOUSAND + " took: " + (endTime - beginTime) / 1000000000 + "
+         * sec");
+         *
+         * break; case 1:
+         *
+         * // Create students studentHandler.createStudents(TWENTY_THOUSAND);
+         *
+         * // Begin time beginTime = System.nanoTime();
+         *
+         * // QUICKSORT // Sorter.quickSort(allStudentsArray);
+         * Sorter.quickSort3Way(allStudentsArray);
+         *
+         * // End Time endTime = System.nanoTime();
+         *
+         * // Display time spend System.out.println("\nSorting for " +
+         * TWENTY_THOUSAND + " took: " + (endTime - beginTime) / 1000000000 + "
+         * sec");
+         *
+         * break; case 2:
+         *
+         * // Create students studentHandler.createStudents(FOURTY_THOUSAND);
+         *
+         * // Begin time beginTime = System.nanoTime();
+         *
+         * // QUICKSORT // Sorter.quickSort(allStudentsArray);
+         * Sorter.quickSort3Way(allStudentsArray);
+         *
+         * // End Time endTime = System.nanoTime();
+         *
+         * // Display time spend System.out.println("\nSorting for " +
+         * FOURTY_THOUSAND + " took: " + (endTime - beginTime) / 1000000000 + "
+         * sec");
+         *
+         * break; case 3:
+         *
+         * // Create students studentHandler.createStudents(EIGHTY_THOUSAND);
+         *
+         * // Begin time beginTime = System.nanoTime();
+         *
+         * // QUICKSORT // Sorter.quickSort(allStudentsArray);
+         * Sorter.quickSort3Way(allStudentsArray);
+         *
+         * // End Time endTime = System.nanoTime();
+         *
+         * // Display time spend System.out.println("\nSorting for " +
+         * EIGHTY_THOUSAND + " took: " + (endTime - beginTime) / 1000000000 + "
+         * sec");
+         *
+         * break; case 4: // Create students
+         * studentHandler.createStudents(HUNDRED_SIXTY_THOUSAND);
+         *
+         * // Begin time beginTime = System.nanoTime();
+         *
+         * // QUICKSORT // Sorter.quickSort(allStudentsArray);
+         * Sorter.quickSort3Way(allStudentsArray);
+         *
+         * // End Time endTime = System.nanoTime();
+         *
+         * // Display time spend System.out.println("\nSorting for " +
+         * HUNDRED_SIXTY_THOUSAND + " took: " + (endTime - beginTime) /
+         * 1000000000 + " sec\n");
+         *
+         * break; }
+*
+         */
 
         // Get ArrayList with studentnumbers and grades
         ArrayList<Student> allStudents = studentHandler.getStudents();
-            
+
         //  Create students
-        studentHandler.createStudents(100);
+        studentHandler.createStudents(30);
 
         //  Create BinarySearchTree
         BST binarySearchTree = new BST();
-        
-        for (int i = 0; i < allStudents.size(); i++) {
-        
-//            binarySearchTree.put(key, value);
-        }
-       
-           
-     
-            
 
-            // Convert allStudents ArrayList to an array to enable sorting
+        System.out.println("BEFORE BST IMPLEMENTATION");
+        for (Student s : allStudents) {
+            System.out.println(s.toString());
+        }
+
+        //  Filling BST with students
+        for (Student s : allStudents) {
+            //  Key = Grade, Value = studentnumber
+            binarySearchTree.put(s.getCijfer(), s.getStudentNummer());
+        }
+        
+        System.out.println("-------------------------------  ");
+        System.out.println("AFTER BST IMPLEMENTATION");
+        for (Student s : allStudents) {
+            System.out.println(s.toString());
+        }
+        
+        System.out.println("-------------------------------  ");
+        System.out.println(binarySearchTree.size());
+
+        // Convert allStudents ArrayList to an array to enable sorting
 //        Student[] allStudentsArray = allStudents.toArray(new Student[allStudents.size()]);
-                   
-            // Shuffle students array
+        // Shuffle students array
 //        StdRandom.shuffle(allStudentsArray);
-                   
 //        for (Student s : allStudentsArray) {
 //            System.out.println(s.toString());
 //        }
-            
-            
-            
-        }
-
     }
+
 }

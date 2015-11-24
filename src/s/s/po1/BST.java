@@ -8,7 +8,12 @@ package s.s.po1;
 import java.util.ArrayList;
 
 /**
- *
+ * Description: How we implement a student list containing studentnumbers and
+ * student grades: By adding a student to the BST we use the student's grade
+ * to determine the key of the node. The studentnumber is the value of that node.
+ * Students with the same grade get added to the value (arraylist) of that 
+ * specific node.
+ * 
  * @author Stefan Lobato [IS204] 500707274
  * @param <Key>
  * @param <Value>
@@ -20,23 +25,29 @@ public class BST<Key extends Comparable<Key>, Value> {
     private class Node {
 
         // key, (cijfer)
-        private Key key; 
-        
+        private Key key;
+
         // associated value, (studentnummers)
-        //  private Value val; 
-         ArrayList<Integer> studentNumbers = new ArrayList();
-        
+        private Value val;
+        ArrayList<Integer> studentNumbers;
+
         private int size = 0;
         // links to subtrees
         private Node left, right;
         // # nodes in subtree rooted here
-        private int N; 
+        private int N;
 
-        public Node(Key key, int N) {
-           this.key = key;
-           //   this.val = val;
-           this.studentNumbers = studentNumbers;
-           this.N = N;
+        public Node(Key key, Value val, int N) {
+            this.key = key;
+            this.val = val;
+            
+            //  Create arraylist when Node is created
+            this.studentNumbers = new ArrayList();
+            
+            //  Add value to ArrayList
+            studentNumbers.add((Integer) val);
+            
+            this.N = N;
         }
     }
 
@@ -77,8 +88,7 @@ public class BST<Key extends Comparable<Key>, Value> {
         } else if (cmp > 0) {
             return get(x.right, key);
         } else {
-            // return x.val;
-            return (Value) x.studentNumbers;
+            return x.val;
         }
     }
 
@@ -96,8 +106,7 @@ public class BST<Key extends Comparable<Key>, Value> {
         // Change key’s value to val if key in subtree rooted at x.
         // Otherwise, add new node to subtree associating key with val.
         if (x == null) {
-//            return new Node(key, val, 1);
-        return new Node(key, 1);
+            return new Node(key, val, 1);
         }
         int cmp = key.compareTo(x.key);
         if (cmp < 0) {
@@ -105,10 +114,10 @@ public class BST<Key extends Comparable<Key>, Value> {
         } else if (cmp > 0) {
             x.right = put(x.right, key, val);
         } else {
-            //  x.val = val;
-            //  put studentnumber in Arraylist
+//              x.val = val;
+              //  put studentnumber in Arraylist
+              x.studentNumbers.add((Integer) val);
             
-            // Code..
         }
         x.N = size(x.left) + size(x.right) + 1;
         return x;
