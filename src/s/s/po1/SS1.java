@@ -8,6 +8,7 @@ package s.s.po1;
 import Handlers.StudentHandler;
 import Models.Student;
 import java.util.ArrayList;
+import nl.hva.dmci.ict.inf.ads.lib.StdRandom;
 
 /**
  *
@@ -115,7 +116,7 @@ public class SS1 {
          * 1000000000 + " sec\n");
          *
          * break; }
-*
+         *
          */
 
         // Get ArrayList with studentnumbers and grades
@@ -127,33 +128,49 @@ public class SS1 {
         //  Create BinarySearchTree
         BST binarySearchTree = new BST();
 
-        System.out.println("BEFORE BST IMPLEMENTATION");
+        System.out.println("BST IMPLEMENTATION.. ");
         for (Student s : allStudents) {
             System.out.println(s.toString());
         }
 
+        // Convert allStudents ArrayList to an array to enable sorting
+        Student[] allStudentsArray = allStudents.toArray(new Student[allStudents.size()]);
+        // Shuffle students array
+        StdRandom.shuffle(allStudentsArray);
+
         //  Filling BST with students
-        for (Student s : allStudents) {
+        for (Student s : allStudentsArray) {
             //  Key = Grade, Value = studentnumber
             binarySearchTree.put(s.getCijfer(), s.getStudentNummer());
         }
-        
-        System.out.println("-------------------------------  ");
-        System.out.println("AFTER BST IMPLEMENTATION");
-        for (Student s : allStudents) {
-            System.out.println(s.toString());
-        }
-        
-        System.out.println("-------------------------------  ");
-        System.out.println(binarySearchTree.size());
 
-        // Convert allStudents ArrayList to an array to enable sorting
-//        Student[] allStudentsArray = allStudents.toArray(new Student[allStudents.size()]);
-        // Shuffle students array
-//        StdRandom.shuffle(allStudentsArray);
-//        for (Student s : allStudentsArray) {
-//            System.out.println(s.toString());
-//        }
+        System.out.println("\nBST IMPLEMENTATION DONE!");
+
+        System.out.println("-------------------------------  ");
+        System.out.println("BST size: " + binarySearchTree.size());
+        System.out.println("-------------------------------  \n");
+
+        //  Get()
+        System.out.println("--------- GET() ---------");
+        System.out.println(binarySearchTree.get(6.5));
+
+        //  RANK
+        System.out.println("-------- RANK --------");
+
+        System.out.println("Cijfer\t\tRank");
+
+        // in progress..
+        for (int i = 0; i < binarySearchTree.size(); i++) {
+            Student get = allStudents.get(i);
+            
+        }
+        for (Student s : allStudentsArray) {
+            System.out.println(
+                    s.getCijfer() + "\t\t" + binarySearchTree.rank(s.getCijfer())
+            );
+        }
+
+        
     }
 
 }
