@@ -7,6 +7,7 @@ package s.s.po1;
 
 import Handlers.StudentHandler;
 import Models.Student;
+import Sort.Sorter;
 import java.util.ArrayList;
 import nl.hva.dmci.ict.inf.ads.lib.StdRandom;
 
@@ -123,20 +124,26 @@ public class SS1 {
         ArrayList<Student> allStudents = studentHandler.getStudents();
 
         //  Create students
-        studentHandler.createStudents(30);
+        studentHandler.createStudents(20);
 
         //  Create BinarySearchTree
         BST binarySearchTree = new BST();
 
-        System.out.println("BST IMPLEMENTATION.. ");
-        for (Student s : allStudents) {
-            System.out.println(s.toString());
-        }
+//        System.out.println("BST IMPLEMENTATION.. ");
+//        for (Student s : allStudents) {
+//            System.out.println(s.toString());
+//        }
 
         // Convert allStudents ArrayList to an array to enable sorting
         Student[] allStudentsArray = allStudents.toArray(new Student[allStudents.size()]);
         // Shuffle students array
         StdRandom.shuffle(allStudentsArray);
+        
+        // Some test values
+        allStudentsArray[0].setCijfer(1.0);
+        allStudentsArray[1].setCijfer(1.0);
+        allStudentsArray[2].setCijfer(1.1);
+        allStudentsArray[3].setCijfer(10.0);
 
         //  Filling BST with students
         for (Student s : allStudentsArray) {
@@ -152,7 +159,9 @@ public class SS1 {
 
         //  Get()
         System.out.println("--------- GET() ---------");
-        System.out.println(binarySearchTree.get(6.5));
+        System.out.println("1.0: " + binarySearchTree.get(1.0));
+        System.out.println("1.1: " + binarySearchTree.get(1.1));
+        System.out.println("10.0: " + binarySearchTree.get(10.0));
 
         //  RANK
         System.out.println("-------- RANK --------");
@@ -161,16 +170,13 @@ public class SS1 {
 
         // in progress..
         for (int i = 0; i < binarySearchTree.size(); i++) {
-            Student get = allStudents.get(i);
-            
-        }
-        for (Student s : allStudentsArray) {
+            Student tmm = allStudents.get(i);
             System.out.println(
-                    s.getCijfer() + "\t\t" + binarySearchTree.rank(s.getCijfer())
+                tmm.getCijfer() + "\t\t" + binarySearchTree.rank(tmm.getCijfer())
             );
         }
 
         
     }
-
+ 
 }

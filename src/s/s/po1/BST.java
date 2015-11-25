@@ -29,7 +29,7 @@ public class BST<Key extends Comparable<Key>, Value> {
 
         // associated value, (studentnummers)
         private Value val;
-        ArrayList<Integer> studentNumbers;
+        ArrayList<Integer> studentNumbers = new ArrayList();
 
         private int size = 0;
         // links to subtrees
@@ -68,15 +68,21 @@ public class BST<Key extends Comparable<Key>, Value> {
     }
 
     /**
-     *
+     * 
      * @param key
-     * @return
+     * @return 
      */
-    public Value get(Key key) {
+    public ArrayList<Integer> get(Key key) {
         return get(root, key);
     }
 
-    private Value get(Node x, Key key) {
+    /**
+     * 
+     * @param x
+     * @param key
+     * @return 
+     */
+    private ArrayList<Integer> get(Node x, Key key) {
         // Return value associated with key in the subtree rooted at x;
         // return null if key not present in subtree rooted at x.
         if (x == null) {
@@ -88,7 +94,7 @@ public class BST<Key extends Comparable<Key>, Value> {
         } else if (cmp > 0) {
             return get(x.right, key);
         } else {
-            return x.val;
+            return x.studentNumbers;
         }
     }
 
@@ -102,6 +108,13 @@ public class BST<Key extends Comparable<Key>, Value> {
         root = put(root, key, val);
     }
 
+    /**
+     * 
+     * @param x
+     * @param key
+     * @param val
+     * @return 
+     */
     private Node put(Node x, Key key, Value val) {
         // Change key’s value to val if key in subtree rooted at x.
         // Otherwise, add new node to subtree associating key with val.
@@ -116,7 +129,6 @@ public class BST<Key extends Comparable<Key>, Value> {
         } else {
             //  put studentnumber in Arraylist
             x.studentNumbers.add((Integer) val);
-
         }
         x.N = size(x.left) + size(x.right) + 1;
         return x;
@@ -142,7 +154,7 @@ public class BST<Key extends Comparable<Key>, Value> {
         } else if (cmp > 0) {
             return 1 + size(x.left) + rank(key, x.right);
         } else {
-            return size(x.left);
+            return size(x.left) + x.studentNumbers.size();
         }
     }
 

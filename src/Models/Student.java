@@ -96,7 +96,7 @@ public class Student implements Comparable<Student> {
             if (this.studentNummer < o.studentNummer) {
                 return -1;
             } else  {
-                 System.err.println("**ERROR CODE: 5713: invalid state");
+                System.err.println("**ERROR CODE: 5713: invalid state");
                 // System.err.println(this.studentNummer + " " + o.studentNummer);
                 return 0;
             }
